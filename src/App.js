@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Nav from "./components/nav";
+import Status from "./components/Status";
+// import ProfileDropdown from './components/profileDropdown';
+import RequestForm from "./components/RequestForm";
+import FarmFormData from "./components/apiFormData";
 
-function App() {
+const App = () => {
+  //handles dom
+  const [currentComponent, setCurrentComponent] = useState("status"); // Initial component to display
+
+  // Function to handle navigation link clicks
+  const handleNavigationClick = (componentName) => {
+    setCurrentComponent(componentName);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Nav onNavigationClick={handleNavigationClick} />
+      {/* Use ProfileDropdown component here */}
+      {/* <ProfileDropdown /> */}
+
+      {currentComponent === "status" && <Status />}
+      {currentComponent === "requestForm" && <RequestForm />}
+      {currentComponent === "farmFormData" && (
+        <FarmFormData />
+      )}
     </div>
   );
-}
+};
 
 export default App;
