@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceptance/Decline Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn-accept {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .btn-decline {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Do you accept the terms?</h1>
+        <div class="buttons">
+            <button class="btn btn-accept" onclick="handleAccept()">Accept</button>
+            <button class="btn btn-decline" onclick="handleDecline()">Decline</button>
+        </div>
+    </div>
+
+    <script>
+        function handleAccept() {
+            alert("Thank you for accepting!");
+            // Add your code here to handle acceptance (e.g., redirect to another page, send data to a server)
+        }
+
+        function handleDecline() {
+            alert("You have declined.");
+            // Add your code here to handle decline (e.g., close the page, redirect to a different section)
+        }
+    </script>
+</body>
+</html>
